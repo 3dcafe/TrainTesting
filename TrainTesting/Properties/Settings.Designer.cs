@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestTrain.Properties
+namespace TrainTesting.Properties
 {
 
 

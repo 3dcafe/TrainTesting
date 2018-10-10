@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F646935-D905-4405-A302-B3C4E3C7B2E4}</ProjectGuid>
+    <ProjectGuid>{DA5F236E-3F76-4422-B978-E326F633A49F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TestTrain</RootNamespace>
-    <AssemblyName>TestTrain</AssemblyName>
+    <RootNamespace>TrainTesting</RootNamespace>
+    <AssemblyName>TrainTesting</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
