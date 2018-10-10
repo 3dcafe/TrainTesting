@@ -19,7 +19,7 @@ namespace TrainTesting.Models
         public DateTime DateAdd { get; set; } = DateTime.Now;
         public override string ToString()
         {
-            return string.Format("time: {0} - length: {1}", Time,length);
+            return string.Format("time: {0} - length: {1} url: {2}", Time,length, Request.url);
         }
     }
 }

@@ -48,14 +48,16 @@ namespace TrainTesting
             {
                 using (ApplicationDbContext db = new ApplicationDbContext())
                 {
-                    var items = db.Requests.ToList();
-                    foreach (var item in items)
+                    for (int i = 0; i < 100; i++)
                     {
-                        await TestRAsync(item);
+                        var items = db.Requests.ToList();
+                        foreach (var item in items)
+                        {
+                            await TestRAsync(item);
+                        }
                     }
                 }
             });
-            MessageBox.Show("all");
         }
 
         async Task TestRAsync(BaseRequest r)
@@ -77,11 +79,24 @@ namespace TrainTesting
                          Time = sw.ElapsedMilliseconds
                     });
                     db.SaveChanges();
-                    Invoke(new MethodInvoker(
-                       delegate { listBox2.Items.Add(item); }
-                       )); 
+                    item.Request = r;
+                    AddLog(item);
                 }
             }
+        }
+
+        void AddLog(Object o)
+        {
+            Invoke(new MethodInvoker(
+               delegate {
+                   listBox2.Items.Add(o); }
+               ));
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSettings sett = new FormSettings();
+            sett.Show();
         }
     }
 }

@@ -34,13 +34,15 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(776, 24);
@@ -59,14 +61,14 @@
             // addRequestToolStripMenuItem
             // 
             this.addRequestToolStripMenuItem.Name = "addRequestToolStripMenuItem";
-            this.addRequestToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.addRequestToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addRequestToolStripMenuItem.Text = "Add Request";
             this.addRequestToolStripMenuItem.Click += new System.EventHandler(this.addRequestToolStripMenuItem_Click);
             // 
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
@@ -90,6 +92,13 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(534, 446);
             this.listBox2.TabIndex = 2;
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -118,6 +127,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 
