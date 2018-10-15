@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201810101154335_DataReuests.Designer.cs">
       <DependentUpon>201810101154335_DataReuests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810110812469_CodeAnswer.cs" />
+    <Compile Include="Migrations\201810110812469_CodeAnswer.Designer.cs">
+      <DependentUpon>201810110812469_CodeAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\BaseRequest.cs" />
@@ -87,6 +91,9 @@
     <EmbeddedResource Include="AddRequest.resx">
       <DependentUpon>AddRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810101154335_DataReuests.resx">
       <DependentUpon>201810101154335_DataReuests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810110812469_CodeAnswer.resx">
+      <DependentUpon>201810110812469_CodeAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

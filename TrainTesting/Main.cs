@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrainTesting.Models;
@@ -44,17 +38,20 @@ namespace TrainTesting
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Task.Run(async () =>
-            {
+            Task.Run(() =>
+            { 
                 using (ApplicationDbContext db = new ApplicationDbContext())
                 {
-                    for (int i = 0; i < 100; i++)
+                    var items = db.Requests.ToList();
+                    foreach (var item in items)
                     {
-                        var items = db.Requests.ToList();
-                        foreach (var item in items)
+                        Task.Run(async () =>
                         {
-                            await TestRAsync(item);
-                        }
+                            for (int i = 0; i < 100; i++)
+                            {
+                                await TestRAsync(item);
+                            }
+                        });
                     }
                 }
             });
@@ -66,8 +63,9 @@ namespace TrainTesting
             sw.Start();
             using (HttpClient client = new HttpClient())
             {
-                var responseString = await client.GetStringAsync(r.url);
-                var s = responseString.Length;
+                HttpResponseMessage response = await client.GetAsync(r.url);
+                // var responseString = await client.GetStringAsync(r.url);
+                var s = response.Content.ReadAsStringAsync().Result.Length;
                 sw.Stop();
                 using (ApplicationDbContext db = new ApplicationDbContext())
                 {
@@ -76,7 +74,8 @@ namespace TrainTesting
                          BaseRequestId = r.id,
                          DateAdd = DateTime.Now,
                          length = s,
-                         Time = sw.ElapsedMilliseconds
+                         Time = sw.ElapsedMilliseconds,
+                         code = response.StatusCode.ToString()
                     });
                     db.SaveChanges();
                     item.Request = r;
