@@ -97,5 +97,10 @@ namespace TrainTesting
             FormSettings sett = new FormSettings();
             sett.Show();
         }
+
+        private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
