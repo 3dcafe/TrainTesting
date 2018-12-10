@@ -100,7 +100,8 @@ namespace TrainTesting
 
         private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormStatistics form = new FormStatistics();
+            form.Show();
         }
     }
 }

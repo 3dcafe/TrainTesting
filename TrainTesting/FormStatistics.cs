@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrainTesting
 {
-    public partial class FormStatisticscs : Form
+    public partial class FormStatistics : Form
     {
-        public FormStatisticscs()
+        public FormStatistics()
         {
             InitializeComponent();
         }
