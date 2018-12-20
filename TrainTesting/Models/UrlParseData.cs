@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrainTesting.Models
 {
@@ -12,7 +7,6 @@ namespace TrainTesting.Models
 #warning Сделать статус
         public int id { get; set; }
         public int BaseRequestId { get; set; }
-        [ForeignKey("BaseRequestId")]
         public virtual BaseRequest Request { get; set; }
         public long length { get; set; }
         public long Time { get; set; }

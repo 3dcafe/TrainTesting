@@ -22,17 +22,15 @@ namespace TrainTesting
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (ApplicationDbContext db = new ApplicationDbContext())
+            /*
+            db.Requests.Add(new BaseRequest()
             {
-                db.Requests.Add(new BaseRequest()
-                {
-                    url = textBox1.Text,
-                    DateAdd = DateTime.Now
-                });
-                db.SaveChanges();
-                this.mainForm.UpdateRequests();
-            }
+                url = textBox1.Text,
+                DateAdd = DateTime.Now
+            });
+            this.mainForm.UpdateRequests();
             this.Close();
+            */
         }
     }
 }

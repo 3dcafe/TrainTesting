@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrainTesting.Models
 {
@@ -15,12 +11,10 @@ namespace TrainTesting.Models
         /// <summary>
         /// Данные обработки
         /// </summary>
-        [ForeignKey("BaseRequestId")]
         public virtual List<UrlParseData> UrlParseDatas { get; set; }
         /// <summary>
         /// Заголовки для заполса
         /// </summary>
-        [ForeignKey("RequestId")]
         public virtual List<HeaderRequest> Headers { get; set; }
 
         public override string ToString()

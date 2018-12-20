@@ -10,9 +10,11 @@ namespace TrainTesting
 {
     public partial class Main : Form
     {
+        public ApplicationDbContext db;
         public Main()
         {
             InitializeComponent();
+            db = ApplicationDbContext.Load();
             UpdateRequests();
         }
 
@@ -30,14 +32,17 @@ namespace TrainTesting
 
         internal void UpdateRequests()
         {
+            /*
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
                 listBox1.DataSource = db.Requests.ToList();
             }
+            */
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             Task.Run(() =>
             { 
                 using (ApplicationDbContext db = new ApplicationDbContext())
@@ -55,10 +60,12 @@ namespace TrainTesting
                     }
                 }
             });
+            */
         }
 
         async Task TestRAsync(BaseRequest r)
         {
+            /*
             var sw = new Stopwatch();
             sw.Start();
             using (HttpClient client = new HttpClient())
@@ -82,6 +89,7 @@ namespace TrainTesting
                     AddLog(item);
                 }
             }
+            */
         }
 
         void AddLog(Object o)
