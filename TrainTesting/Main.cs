@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrainTesting.Models;
+using TrainTesting.FormsTools;
 
 namespace TrainTesting
 {
@@ -122,6 +123,12 @@ namespace TrainTesting
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             db.Save();
+        }
+
+        private void getUrlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGetUrls form = new FormGetUrls(this);
+            form.Show();
         }
     }
 }

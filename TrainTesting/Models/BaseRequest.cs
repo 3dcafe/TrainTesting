@@ -6,7 +6,7 @@ namespace TrainTesting.Models
     public class BaseRequest
     {
         public string url { get; set; }
-        public DateTime DateAdd { get; set; }
+        public DateTime DateAdd { get; set; } = DateTime.Now;
         /// <summary>
         /// Данные обработки
         /// </summary>
