@@ -60,10 +60,16 @@ namespace TrainTesting
             sw.Start();
             using (HttpClient client = new HttpClient())
             {
+                if(r.Headers!=null)
+                {
+                    foreach (var header in r.Headers)
+                    {
+                        client.DefaultRequestHeaders.Add(header.Key, header.Value);
+                    }
+                }
                 HttpResponseMessage response = await client.GetAsync(r.url);
                 var s = response.Content.ReadAsStringAsync().Result.Length;
                 sw.Stop();
-
                 if (r.UrlParseDatas == null) r.UrlParseDatas = new List<UrlParseData>();
                 var item = new UrlParseData()
                 {
@@ -81,10 +87,17 @@ namespace TrainTesting
         void AddLog(Object o,string text = "")
         {
             Invoke(new MethodInvoker(
-               delegate {
+               delegate 
+               {
                    counterLogs++;
-                   listBox2.Items.Add(counterLogs+" "+text + o.ToString()); }
-               ));
+                   string inf = String.Format("{0} {1} {2}", 
+                       counterLogs,
+                       text,
+                       o.ToString()
+                       );
+                   listBox2.Items.Add(inf);
+               }
+            ));
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
