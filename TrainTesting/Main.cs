@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,54 +38,43 @@ namespace TrainTesting
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
             Task.Run(() =>
-            { 
-                using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                var items = db.Requests;
+                foreach (var item in items)
                 {
-                    var items = db.Requests.ToList();
-                    foreach (var item in items)
+                    Task.Run(async () =>
                     {
-                        Task.Run(async () =>
+                        for (int i = 0; i < 100; i++)
                         {
-                            for (int i = 0; i < 100; i++)
-                            {
-                                await TestRAsync(item);
-                            }
-                        });
-                    }
+                            await TestRAsync(item);
+                        }
+                    });
                 }
             });
-            */
         }
 
         async Task TestRAsync(BaseRequest r)
         {
-            /*
             var sw = new Stopwatch();
             sw.Start();
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync(r.url);
-                // var responseString = await client.GetStringAsync(r.url);
                 var s = response.Content.ReadAsStringAsync().Result.Length;
                 sw.Stop();
-                using (ApplicationDbContext db = new ApplicationDbContext())
+
+                if (r.UrlParseDatas == null) r.UrlParseDatas = new List<UrlParseData>();
+                var item = new UrlParseData()
                 {
-                    var item  =  db.UrlParseDatas.Add(new UrlParseData()
-                    {
-                         BaseRequestId = r.id,
-                         DateAdd = DateTime.Now,
-                         length = s,
-                         Time = sw.ElapsedMilliseconds,
-                         code = response.StatusCode.ToString()
-                    });
-                    db.SaveChanges();
-                    item.Request = r;
-                    AddLog(item);
-                }
+                    code = response.StatusCode.ToString(),
+                    DateAdd = DateTime.Now,
+                    length = s,
+                    Time = sw.ElapsedMilliseconds,
+                };
+                r.UrlParseDatas.Add(item);
+                AddLog(item);
             }
-            */
         }
 
         void AddLog(Object o)
