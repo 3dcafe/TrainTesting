@@ -35,7 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ColorName = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.QueryStyles = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // Status
@@ -96,20 +96,22 @@
             this.ColorName.Size = new System.Drawing.Size(100, 20);
             this.ColorName.TabIndex = 12;
             // 
-            // listBox1
+            // QueryStyles
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(200, 9);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(454, 407);
-            this.listBox1.TabIndex = 14;
+            this.QueryStyles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.QueryStyles.FormattingEnabled = true;
+            this.QueryStyles.Location = new System.Drawing.Point(200, 9);
+            this.QueryStyles.Name = "QueryStyles";
+            this.QueryStyles.Size = new System.Drawing.Size(454, 407);
+            this.QueryStyles.TabIndex = 14;
+            this.QueryStyles.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.QueryStyles_DrawItem);
             // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 434);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.QueryStyles);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ColorName);
             this.Controls.Add(this.button1);
@@ -132,6 +134,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ColorName;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox QueryStyles;
     }
 }
