@@ -110,7 +110,7 @@ namespace TrainTesting
         private void addHeaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var r = listBox1.SelectedItem as BaseRequest;
-            FormRequestHeaders form = new FormRequestHeaders(r);
+            FormRequestHeaders form = new FormRequestHeaders(this,r);
             form.Show();
         }
 

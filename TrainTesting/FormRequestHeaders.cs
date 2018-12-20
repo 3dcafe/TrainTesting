@@ -14,28 +14,23 @@ namespace TrainTesting
     public partial class FormRequestHeaders : Form
     {
         BaseRequest _request;
-        public FormRequestHeaders(BaseRequest request)
+        Main m;
+        public FormRequestHeaders(Main m,BaseRequest request)
         {
             InitializeComponent();
             this._request = request;
+            this.m = m;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            using (ApplicationDbContext db = new ApplicationDbContext())
+            if (_request.Headers == null) _request.Headers = new List<HeaderRequest>();
+            _request.Headers.Add(new HeaderRequest()
             {
-               // var req = db.Requests.Where(x => x.id == this._request.id).FirstOrDefault();
-                var h = new HeaderRequest()
-                {
-                     RequestId = _request.id,
-                     Key = textBox1.Text,
-                     Value = textBox2.Text,
-                };
-                db.SaveChanges();
-            }
-            ClearForm();
-            */
+                Key = textBox1.Text,
+                Value = textBox2.Text,
+            });
+            this.ClearForm();
         }
 
         void ClearForm()
