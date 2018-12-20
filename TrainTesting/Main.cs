@@ -118,5 +118,10 @@ namespace TrainTesting
             FormRequestHeaders form = new FormRequestHeaders(r);
             form.Show();
         }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            db.Save();
+        }
     }
 }

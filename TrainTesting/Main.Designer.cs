@@ -36,9 +36,9 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addHeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.addHeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -103,10 +103,17 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(138, 48);
             // 
+            // addHeaderToolStripMenuItem
+            // 
+            this.addHeaderToolStripMenuItem.Name = "addHeaderToolStripMenuItem";
+            this.addHeaderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.addHeaderToolStripMenuItem.Text = "Add Header";
+            this.addHeaderToolStripMenuItem.Click += new System.EventHandler(this.addHeaderToolStripMenuItem_Click);
+            // 
             // statisticsToolStripMenuItem
             // 
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.statisticsToolStripMenuItem.Text = "Statistics";
             this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
@@ -121,13 +128,6 @@
             this.listBox2.Size = new System.Drawing.Size(608, 472);
             this.listBox2.TabIndex = 2;
             // 
-            // addHeaderToolStripMenuItem
-            // 
-            this.addHeaderToolStripMenuItem.Name = "addHeaderToolStripMenuItem";
-            this.addHeaderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addHeaderToolStripMenuItem.Text = "Add Header";
-            this.addHeaderToolStripMenuItem.Click += new System.EventHandler(this.addHeaderToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +139,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

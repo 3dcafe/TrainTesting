@@ -22,6 +22,7 @@ namespace TrainTesting
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
                // var req = db.Requests.Where(x => x.id == this._request.id).FirstOrDefault();
@@ -34,6 +35,7 @@ namespace TrainTesting
                 db.SaveChanges();
             }
             ClearForm();
+            */
         }
 
         void ClearForm()

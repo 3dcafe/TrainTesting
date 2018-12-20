@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -6,27 +7,31 @@ namespace TrainTesting.Models
 {
     public class ApplicationDbContext
     {
+        const string FileNameRead = "data.json";
         public List<BaseRequest> Requests { get; set; }
-#error Реализовать сохранение при выходе из проги
+        public void Save()
+        {
+            string json = JsonConvert.SerializeObject(this);
+            System.IO.File.WriteAllText(FileNameRead, json);
+        }
         /// <summary>
         /// Загрузка данных из файла сериализации
         /// </summary>
         /// <returns></returns>
         internal static ApplicationDbContext Load()
         {
-            using (var reader = new StreamReader("data.json"))
+            if (File.Exists(FileNameRead))
             {
-                string json = reader.ReadToEnd();
-#error Дописать загрузку из файла 
+                ApplicationDbContext m;
+                using (var reader = new StreamReader(FileNameRead))
+                {
+                    string json = reader.ReadToEnd();
+                    m = JsonConvert.DeserializeObject<ApplicationDbContext>(json);
+                }
+                return m;
             }
-            // LOAD -------- https://www.newtonsoft.com/json
-            //Product product = new Product();
-            //product.Name = "Apple";
-            //product.Expiry = new DateTime(2008, 12, 28);
-            //product.Sizes = new string[] { "Small" };
-            //string json = JsonConvert.SerializeObject(product);
-
-            //throw new NotImplementedException();
+            else
+                return new ApplicationDbContext();
         }
     }
 }
