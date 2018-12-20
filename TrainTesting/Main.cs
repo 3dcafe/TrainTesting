@@ -32,12 +32,7 @@ namespace TrainTesting
 
         internal void UpdateRequests()
         {
-            /*
-            using (ApplicationDbContext db = new ApplicationDbContext())
-            {
-                listBox1.DataSource = db.Requests.ToList();
-            }
-            */
+            listBox1.DataSource = db.Requests;
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)

@@ -5,7 +5,6 @@ namespace TrainTesting.Models
 {
     public class BaseRequest
     {
-        public int id { get; set; }
         public string url { get; set; }
         public DateTime DateAdd { get; set; }
         /// <summary>
