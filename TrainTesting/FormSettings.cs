@@ -17,16 +17,17 @@ namespace TrainTesting
         {
             InitializeComponent();
             this.m = m;
-            GrayingFailedRequests.Checked = m.db.GrayingFailedRequests;
         }
-        /// <summary>
-        /// Saved data
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            m.db.GrayingFailedRequests = GrayingFailedRequests.Checked;
+            if (this.m.db.QueryStyles == null) this.m.db.QueryStyles = new List<Models.QueryStyle>();
+            this.m.db.QueryStyles.Add(new Models.QueryStyle()
+            {
+                 ColorName = ColorName.Text,
+                 Status= Status.Text,
+                 TimeRequest =  int.Parse(TimeRequest.Text)
+            });
         }
     }
 }

@@ -88,6 +88,7 @@
     <Compile Include="Models\BaseRequest.cs" />
     <Compile Include="Models\HeaderRequest.cs" />
     <Compile Include="Models\Provides\Odata.cs" />
+    <Compile Include="Models\QueryStyle.cs" />
     <Compile Include="Models\UrlParseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
