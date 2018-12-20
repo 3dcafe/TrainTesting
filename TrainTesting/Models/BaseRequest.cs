@@ -9,7 +9,6 @@ namespace TrainTesting.Models
 {
     public class BaseRequest
     {
-#warning Расширить метод вызова
         public int id { get; set; }
         public string url { get; set; }
         public DateTime DateAdd { get; set; }
@@ -18,6 +17,11 @@ namespace TrainTesting.Models
         /// </summary>
         [ForeignKey("BaseRequestId")]
         public virtual List<UrlParseData> UrlParseDatas { get; set; }
+        /// <summary>
+        /// Заголовки для заполса
+        /// </summary>
+        [ForeignKey("RequestId")]
+        public virtual List<HeaderRequest> Headers { get; set; }
 
         public override string ToString()
         {

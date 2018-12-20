@@ -103,5 +103,12 @@ namespace TrainTesting
             FormStatistics form = new FormStatistics();
             form.Show();
         }
+
+        private void addHeaderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = listBox1.SelectedItem as BaseRequest;
+            FormRequestHeaders form = new FormRequestHeaders(r);
+            form.Show();
+        }
     }
 }

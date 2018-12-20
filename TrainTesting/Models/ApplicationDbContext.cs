@@ -6,8 +6,9 @@ namespace TrainTesting.Models
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext() :base ("DbConnection"){ }
+        public ApplicationDbContext() :base ("DbConnection"){}
         public DbSet<BaseRequest> Requests { get; set; }
         public DbSet<UrlParseData> UrlParseDatas { get; set; }
+        public DbSet<HeaderRequest> Headers { get; set; }
     }
 }
