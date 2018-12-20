@@ -7,7 +7,7 @@ namespace TrainTesting.Models
     public class ApplicationDbContext
     {
         public List<BaseRequest> Requests { get; set; }
-
+#error Реализовать сохранение при выходе из проги
         /// <summary>
         /// Загрузка данных из файла сериализации
         /// </summary>
