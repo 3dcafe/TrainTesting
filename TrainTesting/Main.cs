@@ -73,15 +73,17 @@ namespace TrainTesting
                     Time = sw.ElapsedMilliseconds,
                 };
                 r.UrlParseDatas.Add(item);
-                AddLog(item);
+                AddLog(item,r.url);
             }
         }
 
-        void AddLog(Object o)
+        int counterLogs = 0;
+        void AddLog(Object o,string text = "")
         {
             Invoke(new MethodInvoker(
                delegate {
-                   listBox2.Items.Add(o); }
+                   counterLogs++;
+                   listBox2.Items.Add(counterLogs+" "+text + o.ToString()); }
                ));
         }
 
