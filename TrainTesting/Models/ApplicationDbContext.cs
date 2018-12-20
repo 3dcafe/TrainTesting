@@ -8,6 +8,10 @@ namespace TrainTesting.Models
     public class ApplicationDbContext
     {
         const string FileNameRead = "data.json";
+        /// <summary>
+        /// Graying out requests that failed
+        /// </summary>
+        public bool GrayingFailedRequests { get; set; } = true;
         public List<BaseRequest> Requests { get; set; }
         public void Save()
         {

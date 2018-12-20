@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrainTesting.Models;
 using TrainTesting.FormsTools;
+using System.Drawing;
 
 namespace TrainTesting
 {
@@ -34,6 +35,7 @@ namespace TrainTesting
 
         internal void UpdateRequests()
         {
+#warning not refreshing afrerr add request
             listBox1.DataSource = db.Requests;
         }
 
@@ -74,18 +76,24 @@ namespace TrainTesting
                 if (r.UrlParseDatas == null) r.UrlParseDatas = new List<UrlParseData>();
                 var item = new UrlParseData()
                 {
+                    url = r.url,
                     code = response.StatusCode.ToString(),
                     DateAdd = DateTime.Now,
                     length = s,
                     Time = sw.ElapsedMilliseconds,
                 };
                 r.UrlParseDatas.Add(item);
-                AddLog(item,r.url);
+                AddLog(item,r.url,"Red");
             }
         }
 
         int counterLogs = 0;
-        void AddLog(Object o,string text = "")
+        void AddLog
+            (
+                object o, 
+                string text = "", 
+                string colorName = ""
+            )
         {
             Invoke(new MethodInvoker(
                delegate 
@@ -96,14 +104,14 @@ namespace TrainTesting
                        text,
                        o.ToString()
                        );
-                   listBox2.Items.Add(inf);
+                   listBox2.Items.Add(o);
                }
             ));
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSettings sett = new FormSettings();
+            FormSettings sett = new FormSettings(this);
             sett.Show();
         }
 
@@ -129,6 +137,29 @@ namespace TrainTesting
         {
             FormGetUrls form = new FormGetUrls(this);
             form.Show();
+        }
+
+        private void listBox2_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            if (e.Index > -1)
+            {
+                UrlParseData data = listBox2.Items[e.Index] as UrlParseData;
+                if(data.code != "OK")
+                {
+                    e.Graphics.FillRectangle(Brushes.Gray, e.Bounds);
+                }
+                using (Brush textBrush = new SolidBrush(e.ForeColor))
+                {
+                    e.Graphics.DrawString(listBox2.Items[e.Index].ToString(), e.Font, textBrush, e.Bounds.Location);
+                }
+                //if (e.Index == 0)
+                //    e.Graphics.FillRectangle(Brushes.Green, e.Bounds);
+                //else if (e.Index == 1)
+                //    e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
+                //else
+                //    
+            }
         }
     }
 }

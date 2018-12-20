@@ -12,9 +12,21 @@ namespace TrainTesting
 {
     public partial class FormSettings : Form
     {
-        public FormSettings()
+        Main m;
+        public FormSettings(Main m)
         {
             InitializeComponent();
+            this.m = m;
+            GrayingFailedRequests.Checked = m.db.GrayingFailedRequests;
+        }
+        /// <summary>
+        /// Saved data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m.db.GrayingFailedRequests = GrayingFailedRequests.Checked;
         }
     }
 }
