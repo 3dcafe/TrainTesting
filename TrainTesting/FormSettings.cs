@@ -13,6 +13,7 @@ namespace TrainTesting
 {
     public partial class FormSettings : Form
     {
+        QueryStyle SelectedQueryStyle = null;
 #warning Add render on listbox (QueryStyle) settings
 #warning Change render
         Main m;
@@ -25,19 +26,38 @@ namespace TrainTesting
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.m.db.QueryStyles == null) this.m.db.QueryStyles = new List<Models.QueryStyle>();
-            var item = new Models.QueryStyle()
+#warning Validate Form
+            if(SelectedQueryStyle==null)
             {
-                ColorName = ColorName.Text,
-                Status = Status.Text,
-                TimeRequest = int.Parse(TimeRequest.Text)
-            };
-            this.m.db.QueryStyles.Add(item);
-            QueryStyles.Items.Add(item);
+                if (this.m.db.QueryStyles == null) this.m.db.QueryStyles = new List<Models.QueryStyle>();
+                var item = new Models.QueryStyle()
+                {
+                    ColorName = ColorName.Text,
+                    Status = Status.Text,
+                    TimeRequest = int.Parse(TimeRequest.Text)
+                };
+                this.m.db.QueryStyles.Add(item);
+                QueryStyles.Items.Add(item);
+                ClearForm();
+            }
+            else
+            {
+                SelectedQueryStyle.ColorName = ColorName.Text;
+                SelectedQueryStyle.Status = Status.Text;
+                SelectedQueryStyle.TimeRequest = int.Parse(TimeRequest.Text);
+                ClearForm();
+                LoadSource();
+            }
+        }
+
+        void ClearForm()
+        {
+
         }
 
         void LoadSource()
         {
+            QueryStyles.Items.Clear();
             foreach (var item in m.db.QueryStyles)
             {
                 QueryStyles.Items.Add(item);
@@ -47,6 +67,19 @@ namespace TrainTesting
         private void QueryStyles_DrawItem(object sender, DrawItemEventArgs e)
         {
             UrlParseData.DrawItem(e, QueryStyles);
+        }
+
+        private void QueryStyles_DoubleClick(object sender, EventArgs e)
+        {
+            this.SelectedQueryStyle = QueryStyles.SelectedItem as QueryStyle;
+            LoadFromSelectedQuery();
+        }
+
+        void LoadFromSelectedQuery()
+        {
+            ColorName.Text = this.SelectedQueryStyle.ColorName;
+            Status.Text = SelectedQueryStyle.Status;
+            TimeRequest.Text = SelectedQueryStyle.TimeRequest.ToString();
         }
     }
 }

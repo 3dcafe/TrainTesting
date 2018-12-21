@@ -14,7 +14,7 @@ namespace TrainTesting.Models
 
         public override string ToString()
         {
-            return string.Format("{2} time: {0} - length: {1}", Time,length,url);
+            return string.Format("{2} time: {0} - length: {1} code: {3}", Time,length,url, code);
         }
 
         internal static void DrawItem(DrawItemEventArgs e,ListBox listBox)

@@ -105,6 +105,7 @@
             this.QueryStyles.Size = new System.Drawing.Size(454, 407);
             this.QueryStyles.TabIndex = 14;
             this.QueryStyles.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.QueryStyles_DrawItem);
+            this.QueryStyles.DoubleClick += new System.EventHandler(this.QueryStyles_DoubleClick);
             // 
             // FormSettings
             // 
