@@ -144,8 +144,6 @@
   <ItemGroup>
     <Content Include="Tasks.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
