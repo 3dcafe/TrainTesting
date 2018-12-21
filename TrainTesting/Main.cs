@@ -37,10 +37,14 @@ namespace TrainTesting
         internal void UpdateRequests()
         {
             listBox1.Items.Clear();
-            foreach (var item in db.Requests)
+            if (db.Requests != null)
             {
-                listBox1.Items.Add(item);
+                foreach (var item in db.Requests)
+                {
+                    listBox1.Items.Add(item);
+                }
             }
+            else db.Requests = new List<BaseRequest>();
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,7 +90,8 @@ namespace TrainTesting
                     length = s,
                     Time = sw.ElapsedMilliseconds,
                 };
-                if(db.QueryStyles.Where(x => x.Status == item.code && x.TimeRequest <= item.Time).Any())
+                if (db.QueryStyles == null) db.QueryStyles = new List<QueryStyle>();
+                if (db.QueryStyles.Count>0 && db.QueryStyles.Where(x => x.Status == item.code && x.TimeRequest <= item.Time).Any())
                 {
                     var q = db.QueryStyles.Where(x => x.Status == item.code && x.TimeRequest >= item.Time).OrderBy(x => x.TimeRequest).FirstOrDefault();
                     if (q != null)
@@ -95,8 +100,6 @@ namespace TrainTesting
                 r.UrlParseDatas.Add(item);
                 AddLog(item);
             }
-
-#warning Exeption try use try/Cath for debug
         }
         void AddLog(object o)
         {

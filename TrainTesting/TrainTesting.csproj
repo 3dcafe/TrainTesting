@@ -81,6 +81,12 @@
     <Compile Include="FormsTools\FormGetUrls.Designer.cs">
       <DependentUpon>FormGetUrls.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsTools\FormHeadersRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsTools\FormHeadersRequests.Designer.cs">
+      <DependentUpon>FormHeadersRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
