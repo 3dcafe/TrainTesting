@@ -36,7 +36,7 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getUrlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listRequests = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addHeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +92,7 @@
             // getUrlsToolStripMenuItem
             // 
             this.getUrlsToolStripMenuItem.Name = "getUrlsToolStripMenuItem";
-            this.getUrlsToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.getUrlsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getUrlsToolStripMenuItem.Text = "Get Urls";
             this.getUrlsToolStripMenuItem.Click += new System.EventHandler(this.getUrlsToolStripMenuItem_Click);
             // 
@@ -103,16 +103,16 @@
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
-            // listRequests
+            // listBox1
             // 
-            this.listRequests.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.listRequests.ContextMenuStrip = this.contextMenuStrip1;
-            this.listRequests.FormattingEnabled = true;
-            this.listRequests.Location = new System.Drawing.Point(12, 34);
-            this.listRequests.Name = "listRequests";
-            this.listRequests.Size = new System.Drawing.Size(504, 472);
-            this.listRequests.TabIndex = 1;
+            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 34);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(504, 472);
+            this.listBox1.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
@@ -163,7 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 524);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listRequests);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
@@ -183,7 +183,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRequestToolStripMenuItem;
-        private System.Windows.Forms.ListBox listRequests;
+        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;

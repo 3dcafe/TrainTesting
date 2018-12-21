@@ -36,10 +36,10 @@ namespace TrainTesting
 
         internal void UpdateRequests()
         {
-            listRequests.Items.Clear();
+            listBox1.Items.Clear();
             foreach (var item in db.Requests)
             {
-                listRequests.Items.Add(item);
+                listBox1.Items.Add(item);
             }
         }
 
@@ -95,6 +95,8 @@ namespace TrainTesting
                 r.UrlParseDatas.Add(item);
                 AddLog(item);
             }
+
+#warning Exeption try use try/Cath for debug
         }
         void AddLog(object o)
         {
@@ -119,7 +121,7 @@ namespace TrainTesting
 
         private void addHeaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var r = listRequests.SelectedItem as BaseRequest;
+            var r = listBox1.SelectedItem as BaseRequest;
             FormRequestHeaders form = new FormRequestHeaders(this,r);
             form.Show();
         }
@@ -142,7 +144,7 @@ namespace TrainTesting
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var r = listRequests.SelectedItem as BaseRequest;
+            var r = listBox1.SelectedItem as BaseRequest;
             db.Requests.Remove(r);
             this.UpdateRequests();
         }
