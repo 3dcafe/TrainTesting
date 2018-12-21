@@ -58,6 +58,7 @@ namespace TrainTesting
         void LoadSource()
         {
             QueryStyles.Items.Clear();
+            if (m.db.QueryStyles == null) m.db.QueryStyles = new List<QueryStyle>();
             foreach (var item in m.db.QueryStyles)
             {
                 QueryStyles.Items.Add(item);

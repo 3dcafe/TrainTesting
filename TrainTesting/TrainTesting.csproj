@@ -116,6 +116,9 @@
     <EmbeddedResource Include="FormsTools\FormGetUrls.resx">
       <DependentUpon>FormGetUrls.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsTools\FormHeadersRequests.resx">
+      <DependentUpon>FormHeadersRequests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

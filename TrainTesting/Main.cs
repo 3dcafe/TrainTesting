@@ -151,5 +151,11 @@ namespace TrainTesting
             db.Requests.Remove(r);
             this.UpdateRequests();
         }
+
+        private void addHeadesGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHeadersRequests form = new FormHeadersRequests(this);
+            form.Show();
+        }
     }
 }
