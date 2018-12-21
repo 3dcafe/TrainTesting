@@ -93,7 +93,7 @@ namespace TrainTesting
                 if (db.QueryStyles == null) db.QueryStyles = new List<QueryStyle>();
                 if (db.QueryStyles.Count>0 && db.QueryStyles.Where(x => x.Status == item.code && x.TimeRequest <= item.Time).Any())
                 {
-                    var q = db.QueryStyles.Where(x => x.Status == item.code && x.TimeRequest >= item.Time).OrderBy(x => x.TimeRequest).FirstOrDefault();
+                    var q = db.QueryStyles.Where(x => x.Status == item.code && item.Time>= x.TimeRequest ).OrderBy(x => x.TimeRequest).FirstOrDefault();
                     if (q != null)
                         item.SetStyle(q);
                 }
