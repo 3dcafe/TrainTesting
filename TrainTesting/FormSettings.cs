@@ -13,7 +13,6 @@ namespace TrainTesting
 {
     public partial class FormSettings : Form
     {
-#warning remove all DataSource
 #warning Add render on listbox (QueryStyle) settings
 #warning Change render
         Main m;

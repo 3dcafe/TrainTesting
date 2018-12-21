@@ -30,13 +30,17 @@ namespace TrainTesting
         private void Main_Load(object sender, EventArgs e)
         {
             var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            this.Text = String.Format("Train Testing {0}", version);
+            var Name = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+            this.Text = String.Format("{1} - {0}", version, Name);
         }
 
         internal void UpdateRequests()
         {
-#warning not refreshing afrerr add request
-            listBox1.DataSource = db.Requests;
+            listBox1.Items.Clear();
+            foreach (var item in db.Requests)
+            {
+                listBox1.Items.Add(item);
+            }
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,6 +138,13 @@ namespace TrainTesting
         private void listBox2_DrawItem(object sender, DrawItemEventArgs e)
         {
             UrlParseData.DrawItem(e,listBox2);
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = listBox1.SelectedItem as BaseRequest;
+            db.Requests.Remove(r);
+            this.UpdateRequests();
         }
     }
 }
