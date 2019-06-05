@@ -35,6 +35,7 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getUrlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addHeadesGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -42,7 +43,9 @@
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.addHeadesGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +66,10 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRequestToolStripMenuItem,
-            this.startToolStripMenuItem});
+            this.startToolStripMenuItem,
+            this.saveProjectToolStripMenuItem,
+            this.loadProjectToolStripMenuItem,
+            this.clearProjectToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -71,14 +77,14 @@
             // addRequestToolStripMenuItem
             // 
             this.addRequestToolStripMenuItem.Name = "addRequestToolStripMenuItem";
-            this.addRequestToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.addRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addRequestToolStripMenuItem.Text = "Add Request";
             this.addRequestToolStripMenuItem.Click += new System.EventHandler(this.addRequestToolStripMenuItem_Click);
             // 
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
@@ -94,9 +100,16 @@
             // getUrlsToolStripMenuItem
             // 
             this.getUrlsToolStripMenuItem.Name = "getUrlsToolStripMenuItem";
-            this.getUrlsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getUrlsToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.getUrlsToolStripMenuItem.Text = "Get Urls";
             this.getUrlsToolStripMenuItem.Click += new System.EventHandler(this.getUrlsToolStripMenuItem_Click);
+            // 
+            // addHeadesGroupToolStripMenuItem
+            // 
+            this.addHeadesGroupToolStripMenuItem.Name = "addHeadesGroupToolStripMenuItem";
+            this.addHeadesGroupToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.addHeadesGroupToolStripMenuItem.Text = "Add Heades group";
+            this.addHeadesGroupToolStripMenuItem.Click += new System.EventHandler(this.addHeadesGroupToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -159,12 +172,23 @@
             this.listBox2.TabIndex = 2;
             this.listBox2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox2_DrawItem);
             // 
-            // addHeadesGroupToolStripMenuItem
+            // saveProjectToolStripMenuItem
             // 
-            this.addHeadesGroupToolStripMenuItem.Name = "addHeadesGroupToolStripMenuItem";
-            this.addHeadesGroupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addHeadesGroupToolStripMenuItem.Text = "Add Heades group";
-            this.addHeadesGroupToolStripMenuItem.Click += new System.EventHandler(this.addHeadesGroupToolStripMenuItem_Click);
+            this.saveProjectToolStripMenuItem.Name = "saveProjectToolStripMenuItem";
+            this.saveProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveProjectToolStripMenuItem.Text = "Save Project";
+            // 
+            // loadProjectToolStripMenuItem
+            // 
+            this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadProjectToolStripMenuItem.Text = "Load Project";
+            // 
+            // clearProjectToolStripMenuItem
+            // 
+            this.clearProjectToolStripMenuItem.Name = "clearProjectToolStripMenuItem";
+            this.clearProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearProjectToolStripMenuItem.Text = "Clear Project";
             // 
             // Main
             // 
@@ -203,6 +227,9 @@
         private System.Windows.Forms.ToolStripMenuItem getUrlsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addHeadesGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearProjectToolStripMenuItem;
     }
 }
 
