@@ -157,5 +157,15 @@ namespace TrainTesting
             FormHeadersRequests form = new FormHeadersRequests(this);
             form.Show();
         }
+
+        private void deleteAllHeadersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var item in db.Requests)
+            {
+                if(item.Headers!=null)
+                    item.Headers.Clear();
+            }
+            UpdateRequests();
+        }
     }
 }
