@@ -167,5 +167,10 @@ namespace TrainTesting
             }
             UpdateRequests();
         }
+
+        private void clearListLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+        }
     }
 }
