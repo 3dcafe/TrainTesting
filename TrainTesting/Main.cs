@@ -183,5 +183,11 @@ namespace TrainTesting
             SettingsApp.FormMainSettings form = new SettingsApp.FormMainSettings(this);
             form.Show();
         }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddRequest add = new AddRequest(this);
+            add.Show();
+        }
     }
 }

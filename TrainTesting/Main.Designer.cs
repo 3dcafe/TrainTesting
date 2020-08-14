@@ -33,7 +33,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearListLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,8 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.requestsToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -70,10 +72,9 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startToolStripMenuItem,
-            this.clearListLogsToolStripMenuItem,
-            this.addRequestToolStripMenuItem,
             this.saveProjectToolStripMenuItem,
             this.loadProjectToolStripMenuItem,
+            this.clearListLogsToolStripMenuItem,
             this.clearProjectToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -92,13 +93,6 @@
             this.clearListLogsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.clearListLogsToolStripMenuItem.Text = "Clear List Logs";
             this.clearListLogsToolStripMenuItem.Click += new System.EventHandler(this.clearListLogsToolStripMenuItem_Click);
-            // 
-            // addRequestToolStripMenuItem
-            // 
-            this.addRequestToolStripMenuItem.Name = "addRequestToolStripMenuItem";
-            this.addRequestToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.addRequestToolStripMenuItem.Text = "Add Request";
-            this.addRequestToolStripMenuItem.Click += new System.EventHandler(this.addRequestToolStripMenuItem_Click);
             // 
             // saveProjectToolStripMenuItem
             // 
@@ -227,6 +221,21 @@
             this.mainToolStripMenuItem.Text = "Main";
             this.mainToolStripMenuItem.Click += new System.EventHandler(this.mainToolStripMenuItem_Click);
             // 
+            // requestsToolStripMenuItem
+            // 
+            this.requestsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem});
+            this.requestsToolStripMenuItem.Name = "requestsToolStripMenuItem";
+            this.requestsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.requestsToolStripMenuItem.Text = "Requests";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,7 +261,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addRequestToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox2;
@@ -271,6 +279,8 @@
         private System.Windows.Forms.ToolStripMenuItem clearListLogsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timeLineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem requestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
     }
 }
 
