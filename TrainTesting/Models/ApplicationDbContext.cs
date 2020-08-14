@@ -8,6 +8,7 @@ namespace TrainTesting.Models
     public class ApplicationDbContext
     {
         const string FileNameRead = "data.json";
+        public int countRequests { get; set; } = 1;
         public List<BaseRequest> Requests { get; set; }
         public List<QueryStyle> QueryStyles { get; set; }
         public void Save()

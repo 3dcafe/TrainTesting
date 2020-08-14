@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Status = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -36,6 +37,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ColorName = new System.Windows.Forms.TextBox();
             this.QueryStyles = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Status
@@ -98,14 +102,29 @@
             // 
             // QueryStyles
             // 
+            this.QueryStyles.ContextMenuStrip = this.contextMenuStrip1;
             this.QueryStyles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.QueryStyles.FormattingEnabled = true;
-            this.QueryStyles.Location = new System.Drawing.Point(200, 9);
+            this.QueryStyles.Location = new System.Drawing.Point(118, 9);
             this.QueryStyles.Name = "QueryStyles";
-            this.QueryStyles.Size = new System.Drawing.Size(454, 407);
+            this.QueryStyles.Size = new System.Drawing.Size(582, 420);
             this.QueryStyles.TabIndex = 14;
             this.QueryStyles.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.QueryStyles_DrawItem);
             this.QueryStyles.DoubleClick += new System.EventHandler(this.QueryStyles_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // FormSettings
             // 
@@ -122,6 +141,7 @@
             this.Controls.Add(this.Status);
             this.Name = "FormSettings";
             this.Text = "Settings";
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +156,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ColorName;
         private System.Windows.Forms.ListBox QueryStyles;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

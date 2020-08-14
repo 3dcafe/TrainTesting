@@ -56,7 +56,7 @@ namespace TrainTesting
                 {
                     Task.Run(async () =>
                     {
-                        for (int i = 0; i < 10; i++)
+                        for (int i = 0; i < db.countRequests; i++)
                         {
                             await TestRAsync(item);
                         }
@@ -112,8 +112,7 @@ namespace TrainTesting
         }
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSettings sett = new FormSettings(this);
-            sett.Show();
+
         }
 
         private void statisticsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,6 +170,18 @@ namespace TrainTesting
         private void clearListLogsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
+        }
+
+        private void timeLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSettings sett = new FormSettings(this);
+            sett.Show();
+        }
+
+        private void mainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsApp.FormMainSettings form = new SettingsApp.FormMainSettings(this);
+            form.Show();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace TrainTesting
     public partial class FormSettings : Form
     {
         QueryStyle SelectedQueryStyle = null;
+
 #warning Add render on listbox (QueryStyle) settings
 #warning Change render
         Main m;
@@ -62,6 +63,7 @@ namespace TrainTesting
             foreach (var item in m.db.QueryStyles)
             {
                 QueryStyles.Items.Add(item);
+                
             }
         }
 
@@ -81,6 +83,16 @@ namespace TrainTesting
             ColorName.Text = this.SelectedQueryStyle.ColorName;
             Status.Text = SelectedQueryStyle.Status;
             TimeRequest.Text = SelectedQueryStyle.TimeRequest.ToString();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(QueryStyles.SelectedItem!=null && QueryStyles.SelectedIndex != -1)
+            {
+                QueryStyle style = QueryStyles.SelectedItem as QueryStyle;
+                m.db.QueryStyles.Remove(style);
+                LoadSource();
+            }
         }
     }
 }

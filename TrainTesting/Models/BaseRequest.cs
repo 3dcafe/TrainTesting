@@ -6,6 +6,7 @@ namespace TrainTesting.Models
     public class BaseRequest
     {
         public string url { get; set; }
+        public string tag { get; set; }
         public DateTime DateAdd { get; set; } = DateTime.Now;
         /// <summary>
         /// Данные обработки
@@ -19,9 +20,9 @@ namespace TrainTesting.Models
         public override string ToString()
         {
             if(Headers==null)
-                return string.Format("{0}", url);
+                return string.Format("{1} - {0}", url,tag);
             else
-                return string.Format("{0} ({1})", url,Headers.Count.ToString());
+                return string.Format("{2} - {0} ({1})", url,Headers.Count.ToString(), tag);
         }
     }
 }
